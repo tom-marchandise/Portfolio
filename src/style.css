@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+.link-underline {
+    display: inline-block;
+    position: relative;
+}
+
+.link-underline::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-accent); 
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    transition: transform 0.3s ease-out;
+}
+
+.link-underline:hover::after {
+    transform: scaleX(1);
+}
+
+.group-highlight {
+    background-image: linear-gradient(
+        to top, 
+        var(--color-accent-transparent),
+        var(--color-accent-transparent)
+    );
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: 0% 0.5em; 
+    transition: background-size 0.3s ease-out;
+}
+
+.group:hover .group-highlight {
+    background-size: 100% 0.5em; 
+}
+
+@theme {
+    --color-text: #1A1A1A;
+    --color-text-secondary: #52525B;
+    --color-background: #FFFFFF;
+    --color-cream: #F9F5F2;
+    --color-primary: #f7dd1d;
+    --color-secondary: #00eeff;
+    --color-accent: #ff005d;
+    --color-border: #1A1A1A;
+    --color-shadow: #1A1A1A;
+    --color-footer: #27272A;
+
+    --color-background-transparent: rgba(250, 250, 250, 0.3);
+    --color-secondary-transparent: rgba(0, 238, 255, 0.5);
+    --color-accent-transparent: rgba(255, 0, 93, 0.5);
+
+    --color-background-transparent-dark: rgba(13, 13, 13, 0.3);
+
+    --color-text-dark: #F9FAFB;
+    --color-text-secondary-dark: #B7B7BE;
+    --color-background-dark: #27272A;
+    --color-cream-dark: #18181B;
+    --color-primary-dark: #e2c908;
+    --color-secondary-dark: #00eeff;
+    --color-accent-dark: #ff005d;
+    --color-border-dark: #52525B;
+    --color-shadow-dark: #F9FAFB;
+}
+
+.dark {
+    --color-text: var(--color-text-dark);
+    --color-text-secondary: var(--color-text-secondary-dark);
+    --color-background: var(--color-background-dark);
+    --color-cream: var(--color-cream-dark) ;
+    --color-primary: var(--color-primary-dark);
+    --color-secondary: var(--color-secondary-dark);
+    --color-accent: var(--color-accent-dark);
+    --color-border: var(--color-border-dark);
+    --color-shadow: var(--color-shadow-dark);
+    
+    --color-background-transparent: var(--color-background-transparent-dark)
+}
+
+html, body {
+    @apply text-text bg-cream scroll-smooth;
+    font-family: "Work sans", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 900;
+}
