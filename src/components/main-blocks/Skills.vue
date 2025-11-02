@@ -88,3 +88,21 @@ const toggleModal = (skillBlock: SkillBlock) => {
         </div>
     </div>
 </template>
+
+<style scoped>
+.group-highlight {
+    background-image: linear-gradient(
+        to top, 
+        var(--color-accent-transparent),
+        var(--color-accent-transparent)
+    );
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: 0% 0.5em; 
+    transition: background-size 0.3s ease-out;
+}
+
+.group:hover .group-highlight {
+    background-size: 100% 0.5em; 
+}
+</style>
